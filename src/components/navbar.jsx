@@ -1,49 +1,48 @@
-import { BiMenuAltRight } from "react-icons/bi";
-import { RxCross2 } from "react-icons/rx";
+// import React, { useState } from "react";
+// import { BiMenuAltRight } from "react-icons/bi";
+// import { RxCross2 } from "react-icons/rx";
 
 function Navbar() {
-  const openNav = () => {
-    document.querySelector(".show").classList.add("block");
-    alert("Hey");
-  };
-
+  // const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="flex justify-between text-white w-full md:p-4 p-3 cursor-pointer">
-      {/* Logo on Large Screen  */}
-      <div className="">
-        <img src="assets/Logo.png" alt="findtrends_logo" />
-      </div>
-
-      <div className="hidden md:flex flex-col md:flex-row md:items-center md:justify-between md:gap-32 gap-4 md:bg-transparent bg-black md:p-0 p-4 show">
-        <div className="flex items-center justify-between">
-          <div className="md:hidden block">
+    <nav className="w-full p-2 lg:p-4 ">
+      <div className="flex justify-between items-center">
+        {/* Logo on Large Screen  */}
+        <div className="flex items-center">
+          <div className="flex-shrink-0 cursor-pointer">
             <img src="assets/Logo.png" alt="findtrends_logo" />
           </div>
-          <div>
-            <RxCross2 className="text-3xl md:hidden block" />
-          </div>
         </div>
-
-        <ul className="flex md:items-center md:justify-between md:flex-row flex-col gap-8">
-          <li>About</li>
-          <li>How it work</li>
-          <li>Pricing</li>
-          <li>Solution</li>
-          <li>Features</li>
-        </ul>
-
-        <div className="flex md:items-center md:justify-between md:flex-row flex-col gap-4">
-          <a href="/* eslint-disable jsx-a11y/anchor-is-valid */">Login</a>
+        {/* Navbar Links  */}
+        <div className="hidden md:block">
+          <ul className="flex items-center gap-8 text-white">
+            <li>About</li>
+            <li>How it work</li>
+            <li>Pricing</li>
+            <li>Solution</li>
+            <li>Features</li>
+          </ul>
+        </div>
+        {/* Navbar Button */}
+        <div className="flex items-center justify-between gap-6">
+          <a href="#" className="text-white">
+            Login
+          </a>
           <a
-            href="/* eslint-disable jsx-a11y/anchor-is-valid */"
-            className="rounded-full bg-white text-black px-5 py-2 w-32 text-center"
+            href="#"
+            className="rounded-full bg-white text-black px-5 py-2 w-32 text-center hover:bg-[#A8FF35] transition-all duration-75 focus:outline-none focus:ring focus:ring-[#a7ff3579]"
           >
             Register
           </a>
         </div>
+
+        <div className="md:hidden block">
+          <BiMenuAltRight className="text-3xl" />
+        </div>
       </div>
-      <BiMenuAltRight className="text-3xl md:hidden block" onClick={openNav} />
-    </div>
+
+      {/* {isOpen && {}} */}
+    </nav>
   );
 }
 
